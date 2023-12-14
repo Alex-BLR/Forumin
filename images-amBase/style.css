@@ -1,0 +1,339 @@
+/* Фон форума
+===========*/
+body {
+    	color: #999;
+   	 background: #1c1b20;
+	/* background-image: url(data:image/gif;base64,R0lGODlhCAAIAJEAEHAAIALAAAAAAIAAgAAAINhG4nudroGJBRsYcxKAA7);*/
+
+}
+body,td {
+	font-family: Arial,Verdana,Helvetica,sans serif;
+	font-size:10pt;
+}
+
+
+/* Строчки в профиле
+================*/
+th {font-size: 12px; font-weight: bold; background: #282830; white-space: nowrap; padding: 0 3px; text-align: center; height: 22px; border: #777 1px solid;}
+.row1 {font-size: 11px; background: #31313d; white-space: nowrap; padding: 0 3px; border: #555 0px solid;}
+.row2 {font-size: 11px; background: #282830; white-space: nowrap; padding: 0 3px; border: #555 0px solid;}
+
+
+/* Ссылки тем
+============*/
+a.topic:link {
+		font-size: 12px;
+		font-family: tahoma;
+		color: #ccc;
+		text-decoration: none;
+		font-weight: bold;
+}
+a.topic:visited {
+		font-size: 12px;
+		font-family: tahoma;
+		color: #ccc;
+		text-decoration: none;
+		font-weight: bold;
+}
+a.topic:hover {color: #f64b18}
+
+
+/* Ссылки меню форума 
+=================*/
+a:link { text-decoration: none; color: #999;}
+a:visited {text-decoration:none; color: #999;}
+a:hover {text-decoration:none; color: #0088a8;}
+a:active {text-decoration:underline; color: #0088a8;}
+
+
+/* Размеры шрифта
+==============*/
+.norm {font-size: 10pt;}
+.med {font-size: 11px;}
+.small {font-size: 10px;}
+
+
+/* Настройки ширины таблиц форума, фона и цвета ячеек и т.д.
+============================================*/
+table.main {width:95%; font-size:10pt; background: ; border: #31313d 0px solid;}
+table.main td {font-size:10pt; background: #31313d; border: red 0px solid;}
+
+table.f {width:95%; background: #1c1b20;}
+table.f td {background: #282830;}
+
+table.f td.t {font-weight:bold; font-family:tahoma; font-size:12px; height:22px; padding:3 5 3 5; background:#333}
+
+table.f td.name {width:200px; padding-top:2; font-weight:bold; font-family:Tahoma; text-align:center; background: #31313d;}
+table.f td.date {width:80%; padding:1 1 1 5; font: bold 10 arial; color: #777;}
+table.f td.up {width:300px; padding:0 5 0 0; font: bold 10 arial; text-align: right;}
+table.f td.msg {width:100%; height:120px; padding:5 0 3 5; text-align: left;background:;}
+
+tr.th td {height:22px; text-align:center; font-weight:bold; color: #6c5f54; font-family:Tahoma; background: #282830;}
+
+
+/* Ссылки (Тема: ...) и (Список тем • Новая тема)
+==================================*/
+table.f td.t a {text-decoration:underline; color: #ccc} 
+table.f td.t a:hover {text-decoration:underline;color: #0088a8;}
+
+
+/* Цитата (кнопка)
+=============*/
+.q {
+	margin-left:15px;
+	margin-right:15px;
+	margin-top:10px;
+	padding: 8px 8px 8px 8px;
+	border: #999 1px dotted;
+	background: #31313d;
+}
+
+
+/* Код (кнопка)
+===========*/
+.code {
+	margin: 5px 5px 5px 5px;
+	padding: 10px 10px;
+	border: #999 1px dotted;
+	font-size: 11px;
+	font-family: Monaco, 'Courier New', monospace;
+	background: #31313d;
+}
+
+
+/* Стиль ссылок ников над аватаром
+==========================*/
+a.name {color: #0088a8; text-decoration: none}
+a.name:hover {text-decoration: underline}
+
+
+/* Выпадающее меню смены стиля форума
+==============================*/
+select,option {
+		border: #555 1px solid;
+		background:#31313d;
+		color: #777;
+		font-size: 12px;
+}
+
+
+/* Оформление форм и полей ввода текста
+==============================*/
+form {margin:0px}
+
+textarea,input {
+	color: #ccc;
+	font-size:12px;
+	width:100%;
+	height:19px;
+	border:1px solid #555;
+	background: #21212d;
+	font-family:tahoma;
+}
+input.button {
+	width: 30px;
+	height: 22px;
+	cursor: pointer;
+	background: #31313c;
+	color: #ccc;
+	border-radius: 3px;
+	border: 1px solid #777;
+	box-shadow: 0 2px #111;
+	letter-spacing: 0px;
+	font-size:12px;
+	font-family:tahoma; /*Verdana, Arial, Helvetica, sans-serif;*/
+	margin: 1px;
+	padding:0 0 0 0;
+}
+input.button:hover {
+	background: #222230;
+	box-shadow: 0 0px #000;
+}
+input.button:active {
+	box-shadow: 0 1px #000;
+}
+
+
+/* Элемент формы круглый
+===================*/
+.radio {
+	width:14px;
+	height:14px;
+	padding:0 0 0 0;
+}
+.top {
+	margin:5;
+	padding:0 -5 5 5;
+	text-align: bottom;
+}
+
+
+/* Поля ввода ЛОГИН, ПАРОЛЬ и тд
+=========================*/
+input[name="llen"],
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+			height: 28px;
+			padding: 2px 3px;
+			/*background: #222;*/
+			border: 1px solid #555;
+			border-radius: 3px;
+			box-shadow: none;
+			box-sizing: border-box;
+}
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,select:focus
+			{
+				border: 1px solid #33C3F0;
+				outline: 0;
+}
+
+
+/* Кнопки УДАЛИТЬ и ОТПРАВИТЬ
+========================*/
+.fbutton {
+	height: 28px;
+	cursor: pointer;
+	width: 90px;
+	border: 1px solid #007a8e;
+	border-radius: 3px;
+	color: #fff;
+	background: #0088a8;
+}
+.fbutton:hover  {
+	background-color: #00aaaa;
+	box-shadow: 0 0px #007a8e;
+	color: #fff;
+}
+
+
+/* Нумерация страниц в темах
+=====================*/
+a.pagination,
+a.pagination:visited,
+a.pagination:active {
+		padding: 2 5px;
+		line-height: 16pt;
+		border-radius: 2px;
+		border: #777 1px solid;
+		text-decoration: none;
+		color: #999;
+		background: #31313d;
+}
+a.pagination:hover {
+		border: #555555 1px solid;
+		font-weight: bold;
+		color: #000;
+		background: #fff;
+		border-radius: 3px;
+}
+.currentpage {
+		padding: 2 5px;
+		border-radius: 2px;
+		border: #007a8e 1px solid;
+		background: #0d6efd;
+		color: #fff;
+		font-weight: bold;
+		cursor: default;
+}
+
+
+/* Для сортировки колонок форума
+========================*/
+table.main thead td {
+			cursor:pointer;
+			cursor:hand;
+			font-weight:bold;
+			text-align:center;
+			vertical-align:middle
+}
+
+
+
+/* Окно, которое появляется и исчезает в правом верхнем углу
+===========================================*/
+#welcome {
+		position: fixed;
+		_position: absolute;
+		top: 0;
+		_top: expression(0+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');
+		left: 74%;
+		width: 25%;
+		height: auto;
+		z-index: 1;
+		background-color: #555;
+		opacity: 0.9;
+		display: none;
+		text-align: center;
+		text-shadow:1px 1px 0 #000;
+		padding: 3px 3px 3px 3px;
+		border: #000000 1px solid;
+}
+
+
+/* Панель, появляется вверху при нажатии FAQ
+=================================*/
+#stats {
+		position: fixed;
+		_position: absolute;
+		top: 0px;
+		_top: expression(0+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');
+		left: 0px;
+		width: 100%;
+		z-index: 1;
+		background-color: #555;
+		opacity: 1;
+		display: none;
+		padding: 5px 5px 5px 5px;
+		border: #000000 1px solid;
+}
+
+
+/* Tooltip Всплывающая подсказка 
+========================*/
+.tooltip {
+	cursor:help;
+	position: relative;
+	display: inline-block;
+	/*border-bottom: 1px dotted black;*/
+}
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 180px;
+	background: rgba(0,0,0,0.8); /*background-color: #555;*/
+	color: #ddd;
+	font-family: tahoma;
+	font-size: 10px;
+	font-weight: normal;
+	text-align: left;
+	padding: 5px 7;
+	border-radius: 6px;
+
+	position: absolute;
+	z-index: 1;
+	bottom: 165%;
+	left: 50%;
+	margin-left: -90px;
+
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -10px;
+	border-width: 6px;
+	border-style: solid;
+	border-color: transparent transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}

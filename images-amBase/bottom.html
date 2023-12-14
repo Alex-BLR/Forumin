@@ -1,0 +1,28 @@
+<table cellpadding=2 cellspacing=0 align=center border=0 class=f>
+
+<tr>
+<td align=left><span class=med title="Уникальные визиты">&nbsp;<?=$cnum?></span> | <span class=med title="Время генерации скрипта (сек)"><?=$total_time?></span> | <span class=med>Зарегистрировано: <a href="index.php?event=who" title="Последний: <?=$tdt[0]?>"><?=$ui?></span></a> | <span class=med title="Активность за <?=$timeouthours?> час">Сегодня были: <?=$st_infoday?> гостей: <b><?=$st_guestsday?></b></span></td>
+<td align=right>
+<form>
+<select size=1 onchange="top.location.href=this.options[this.selectedIndex].value;">
+<option selected value=#>Стиль форума</option>
+<option value="javascript:setActiveStyleSheet('default');">Тёмный простой</option>
+<option value="javascript:setActiveStyleSheet('alternate 1');">Тёмный сотовый</option>
+<option value="javascript:setActiveStyleSheet('alternate 2');">Тёмный шашки</option>
+<option value="javascript:setActiveStyleSheet('alternate 3');">Оранжевый полосатый</option>
+<option value="javascript:setActiveStyleSheet('alternate 4');">Серый светлый</option>
+<option value="javascript:setActiveStyleSheet('alternate 5');">Серый полосатый</option>
+<option value="javascript:setActiveStyleSheet('alternate 6');">Зелёный простой</option>
+</select>
+</form>
+</td></tr>
+</table>
+
+<br>
+
+<div align=center><small><a href="http://vox.dx.am" target="_blank"><?=$ver?></a></small>
+<br><br>
+</div>
+</div>
+</body>
+</html>
