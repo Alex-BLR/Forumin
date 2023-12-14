@@ -1,0 +1,30 @@
+<table cellpadding=2 cellspacing=0 align=center border=0 class=f>
+
+<tr>
+<td align=left><span class=med title="Уникальные визиты">&nbsp;<?=$cnum?></span> | <span class=med title="Время генерации скрипта (сек)"><?=$total_time?></span> | <span class=med>Зарегистрировано: <a href="index.php?event=who" title="Последний: <?=$tdt[0]?>"><?=$ui?></span></a> | <span class=med title="Активность за <?=$timeouthours?> час">Сегодня были: <?=$st_infoday?> гостей: <b><?=$st_guestsday?></b></span></td>
+<td align=right>
+<form>
+<select size=1 onchange="top.location.href=this.options[this.selectedIndex].value;">
+<option selected value=#>Стиль форума</option>
+<option value="javascript:setActiveStyleSheet('default');">Серый</option>
+<option value="javascript:setActiveStyleSheet('alternate 1');">Зеленый</option>
+<option value="javascript:setActiveStyleSheet('alternate 2');">Темный</option>
+<option value="javascript:setActiveStyleSheet('alternate 3');">Графика 1</option>
+<option value="javascript:setActiveStyleSheet('alternate 4');">Графика 2</option>
+<option value="javascript:setActiveStyleSheet('alternate 5');">Графика - Черепа</option>
+<option value="javascript:setActiveStyleSheet('alternate 6');">Графика - Цветы</option>
+<option value="javascript:setActiveStyleSheet('alternate 7');">Графика - Фигура</option>
+</select>
+</form>
+</td></tr>
+</table>
+
+<br>
+
+<div align=center><small><a href="http://vox.dx.am" target="_blank"><?=$ver?></a></small>
+<br><br>
+</div>
+</div>
+</body>
+</html>
+

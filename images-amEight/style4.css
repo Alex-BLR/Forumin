@@ -1,0 +1,279 @@
+a:link, a:visited {color:#f1f118; text-decoration:none; font-weight:normal;} 
+a:active, a:hover {color:#f1f118; text-decoration:underline;}
+
+body {
+margin:0px; background: #121e1b url(style4_main_bg.gif); color:#E2E2E2; font-family:Verdana; font-size:10pt;
+scrollbar-3dlight-color:#CCCC99;
+scrollbar-arrow-color:#CCCC99;
+scrollbar-darkshadow-color:#222;
+scrollbar-face-color:#293345;
+scrollbar-highlight-color:#293345;
+scrollbar-shadow-color:#ccc;
+scrollbar-track-color:#555;
+}
+
+
+/* Строчки в профиле
+================*/
+th {font-size: 12px; font-weight: bold; background: #141A23; white-space: nowrap; padding: 0 3px; text-align: center; height: 22px; border: #777 1px solid;}
+.row1 {font-size: 11px; background: #253545; white-space: nowrap; padding: 0 3px; border: #555 0px solid;}
+.row2 {font-size: 11px; background: #2e3e4e; white-space: nowrap; padding: 0 3px; border: #555 0px solid;}
+
+
+
+
+
+form {margin:0px; font-size:12px;}
+select, option {border:1px solid #000; background:#293345; color:#E2E2E2; font-size:12px;}
+
+input, textarea {
+	font-size:12px;
+	width:100%;
+	height:19px;
+	border:1px solid #E2E2E2;
+	background:#141A23;
+	color:#ccc;
+	font-family:tahoma
+}
+input.button {
+	width: 30px;
+	height: 22px;
+	cursor: pointer;
+	background:#141A23;
+	color:#E2E2E2;
+	font-size:12px;
+	font-family:tahoma;
+	border-radius: 2px;
+	border:1px solid #E2E2E2;
+	margin:1px;
+	padding:0px 0px 0px 0px;
+}
+input.button:hover {
+	color:#000;
+	background: #fff;
+	box-shadow: 0 0px #000;
+}
+input.button:active {
+	box-shadow: 0 1px #000;
+}
+
+/* Элемент формы круглый */
+.radio {
+	width:14px;
+	height:14px;
+	padding:0 0 0 0;
+}
+.top {
+	margin:5;
+	padding:0 -5 5 5;
+	text-align: bottom;
+}
+
+
+/* Поля ввода ЛОГИН, ПАРОЛЬ и тд */
+
+input[name="llen"],
+input[type="email"],
+input[type="text"],
+input[type="password"] {
+	height: 30px;
+	padding: 3px 5px;
+	/* background-color: #fff; */
+	border: 1px solid #777;
+	border-radius: 4px;
+	box-shadow: none;
+	box-sizing: border-box;
+}
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+input[type="email"]:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+textarea:focus,
+select:focus {
+	border: 1px solid #33C3F0;
+	outline: 0;
+}
+
+
+/* Кнопки УДАЛИТЬ и ОТПРАВИТЬ */
+.fbutton {
+	cursor: pointer;
+	height: 28px;
+	width: 90px;
+	border: 1px solid #999;
+	border-radius: 3px;
+	background: #141A23;
+}
+.fbutton:hover  {
+	color:#000;
+	background-color: #ddd;
+	box-shadow: 0 0px #000;
+}
+
+
+
+h1 {margin:0px; padding-left:25px; padding-right:25px; padding-top:10px; font-size:14px; font-weight:bold;}
+h2 {margin:0px; padding-left:25px; padding-right:25px; padding-top:10px; font-size:13px; font-weight:bold;}
+h3 {text-align:right; font-style:italic; padding-right:50px; margin-bottom:0px; font-size:15pt}
+
+.norm {font-size: 10pt;}
+.med {font-size: 11px;}
+.small {font-size: 10px;}
+
+table.main {width:95%; font-size:10pt; background: #000 url(style4_menu_bg.gif) repeat-x;}
+table.main td {font-size:10pt; background:#141A23}
+
+table.f {width:95%; background:#141A23}
+table.f td {background:#293345}
+
+table.f td.t {font-weight:bold; font-family:tahoma; font-size:12; padding:3px 5px 3px 5px; background:#141A23}
+table.f td.t a {color:#E2E2E2}
+table.f td.t a:hover {text-decoration:underline}
+
+table.f td.name {width:200px; padding-top:2px; font-weight:bold; font-family:tahoma; text-align:center; background:#293345}
+table.f td.date {width:70%; padding:1 1 1 15; font:bold 10 arial; color:#999; }
+table.f td.up {width:300px; padding:0 5 0 0; font:bold 10 arial; text-align:right; color:#E2E2E2; }
+table.f td.msg {width:100%; height:120px; padding:5px 10px 5px 10px; text-align:left; color:#E2E2E2; background:#293345}
+
+tr.th td {height:22px; text-align:center; font-weight:bold; color:#ddd; background:#777; font-family:tahoma}
+
+
+
+
+/* Цитата (кнопка)
+=============*/
+
+.q {
+	margin-left:15px;
+	margin-right:15px;
+	margin-top:10px;
+	padding: 8px 8px 8px 8px;
+	border: #555 1px dotted;
+	background:#333;
+}
+
+
+/* Код (кнопка)
+===========*/
+
+.code {
+    margin: 5px 5px 5px 5px;
+    padding: 10px 10px;
+    border: #555 1px dotted;
+    font-size: 11px;
+    font-family: Monaco, 'Courier New', monospace;
+    background: #333;
+}
+
+
+
+
+
+a.name {color:#F4B968; text-decoration:none}
+a.name:hover {text-decoration:underline}
+
+
+
+a.pagination,
+a.pagination:visited,
+a.pagination:active {
+		padding: 2 5px;
+		line-height: 16pt;
+		border-radius: 3px;
+		border: 1px solid #999;
+		text-decoration: none; 
+		color: #eee;
+}
+a.pagination:hover {
+		border: 1px solid #FF9900;
+		font-weight: bold;
+		color: #000;
+		background: #FF9900;
+}
+.currentpage {
+		padding: 2 5px;
+		border-radius: 3px;
+		border: 1px solid #FF9900;
+		background: #FF9900;
+		color: #000;
+		font-weight: bold;
+		cursor: default;
+}
+
+
+#welcome {
+		position: fixed;
+		_position: absolute;
+		top: 0px;
+		_top: expression(0+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');
+		left: 74%;
+		width: 25%;
+		height: auto;
+		z-index: 1;
+		background-color: #555;
+		opacity: 0.9;
+		display: none;
+		text-align: center;
+		text-shadow:1px 1px 0px #000;
+		padding: 3px 3px 3px 3px;
+		border: 1px solid #000;
+}
+#stats {
+	position: fixed;
+	_position: absolute;
+	 top: 0px;
+	_top: expression(0+((e=document.documentElement.scrollTop)?e:document.body.scrollTop)+'px');
+	left: 0px;
+	width: 100%;
+	z-index: 1;
+	background-color: #555;
+	opacity: 0.9;
+	display: none;
+	padding: 3px 3px 3px 3px;
+	border: 1px solid #000;
+}
+
+/* Tooltip Всплывающая подсказка 
+========================*/
+.tooltip {
+	cursor:help;
+	position: relative;
+	display: inline-block;
+	/*border-bottom: 1px dotted black;*/
+}
+.tooltip .tooltiptext {
+	visibility: hidden;
+	width: 180px;
+	background: rgba(0,0,0,0.8); /*background-color: #555;*/
+	color: #ddd;
+	font-family: tahoma;
+	font-size: 10px;
+	font-weight: normal;
+	text-align: left;
+	padding: 5px 7;
+	border-radius: 6px;
+
+	position: absolute;
+	z-index: 1;
+	bottom: 165%;
+	left: 50%;
+	margin-left: -90px;
+
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+.tooltip .tooltiptext::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -10px;
+	border-width: 6px;
+	border-style: solid;
+	border-color: transparent transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext {
+	visibility: visible;
+	opacity: 1;
+}
