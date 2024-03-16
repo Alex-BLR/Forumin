@@ -1,6 +1,6 @@
 <?php
 /***********************************************************
- *  Forumin v1.2 [31-05-2023]
+ *  Forumin v1.3 [15-03-2024]
  *  Alexand3r ~ http://vox.dx.am ~ alexand3r2@mail.ru ~ youtube.com/@alexblr
  *  Движок от EI форум Copyright (c) 2004 Эдюха 
  *
@@ -1240,7 +1240,7 @@ if (isset($_GET['event']))
 
 		if ($captchamin==1)
 		{
-			exit ("<tr><td><table cellpadding=0 cellspacing=0 border=0><tr><td>
+			exit("<tr><td><table cellpadding=0 cellspacing=0 border=0><tr><td>
 <script>function checkedBox(f){if(f.check1.checked) document.getElementById('other').innerHTML='<br><center><input type=submit class=fbutton value=\'Отправить\'></center>';
 else document.getElementById('other').innerHTML='<br><center><input type=submit class=fbutton value=\'Отправить\' disabled=\'disabled\'></center>';}</script>
 <input type=checkbox name=check1 onClick=\"checkedBox(this.form)\" style='height:20px;width:20px' title='Если не отправляет данные, то повторно ставьте галочку капчи' ></td>
@@ -1249,7 +1249,7 @@ else document.getElementById('other').innerHTML='<br><center><input type=submit 
 </td></tr></table></form><p align=center><a href='index.php?id=forum'>&#9668; назад</a></p>");
 
 		} else {
-			exit ("<tr><td><img src=\"index.php?secpic\" id='secpic_img' style='border: #000 1px solid;' align='top' title='Для смены картинки щелкните по ней' onclick=\"document.getElementById('secpic_img').src='index.php?secpic&' + Math.random(); return false\">&nbsp; <input type='text' name='secpic' id='secpic' style='width:60px' title='Введите $let_amount жирных симв. изображенных на картинке' maxlength='10'></td></tr>
+			exit("<tr><td><img src=\"index.php?secpic\" id='secpic_img' style='border: #000 1px solid;' align='top' title='Для смены картинки щелкните по ней' onclick=\"document.getElementById('secpic_img').src='index.php?secpic&' + Math.random(); return false\">&nbsp; <input type='text' name='secpic' id='secpic' style='width:60px' title='Введите $let_amount жирных симв. изображенных на картинке' maxlength='10'></td></tr>
 <tr><td><input type=hidden name=add value=''><br><center><input type=submit class=fbutton value='Отправить'></center>
 </td></tr></table></form><p align=center><a href='index.php?id=forum'>&#9668; назад</a></p>");
 
@@ -2168,7 +2168,12 @@ if (isset($forumid) || isset($_POST['action']) && $_POST['action']=="answer" && 
 
 				$topicdat="$tdt[0]¦$tdt[1]¦$tdt[2]¦$tdt[3]¦$tdt[4]¦$tdt[5]¦$tdt[6]¦$tdt[7]¦$tdt[8]¦$tdt[9]¦$tdt[10]¦$tdt[11]¦$tdt[12]¦$tdt[13]¦".$ccnt."¦".$name."¦".$email."¦".$date."¦".$msgg."¦".$country_img."¦".$country_name."¦".$ip."¦".$country."¦".$latitude."¦".$longitude."¦";
 
-				if ($forumid!=$tdt[2]) fwrite($fp,"$topiclines[$i]"); else fwrite($fp,$topicdat."\n");
+				if ($forumid!=$tdt[2])
+				{
+					fwrite($fp,"$topiclines[$i]");
+				} else {
+					fwrite($fp,$topicdat."\n");
+				}
 			}
 			fflush($fp);
 			flock($fp,LOCK_UN);
@@ -2832,9 +2837,8 @@ print "<style>a.glf{font-family:tahoma;font-size:11px;font-weight:normal;color:#
 
 			if ($_['user'] && isset($cname) && isset($cpassreg) && isset($cmail))
 			{
-				$formreg="
 
-<script>fetch('https://ipapi.co/json/').then(function(response){return response.json();}).then(function(data){code.value=data.country_code;country.value=data.country_name;city.value=data.city;ips.value=data.ip;latitude.value=data.latitude;longitude.value = data.longitude;});</script>
+$formreg="<script>fetch('https://ipapi.co/json/').then(function(response){return response.json();}).then(function(data){code.value=data.country_code;country.value=data.country_name;city.value=data.city;ips.value=data.ip;latitude.value=data.latitude;longitude.value = data.longitude;});</script>
 <script>function textKey(){var ff=document.forms.item('REPLIER');ff.llen.value=".$maxmsg." - ff.msg.value.length;if(ff.msg.value.length>".$maxmsg.")ff.msg.value=ff.msg.value.substr(0,".$maxmsg.");}function f_1(){document.REPLIER.p_send.disabled=true;}</script>
 <a name=last></a>
 <form action=\"index.php\" method=post name=REPLIER onSubmit=\"f_1(); return true;\" enctype='multipart/form-data'>
@@ -3024,7 +3028,7 @@ else document.getElementById('other').innerHTML='<br><center><input type=submit 
 		{
 			if ($_['user'] && isset($_COOKIE['cname']) && isset($_COOKIE['cpassreg'])) 
 			{
-				print "<br><br><br><br>
+print "<br><br><br><br>
 <script>fetch('https://ipapi.co/json/').then(function(response){return response.json();}).then(function(data){code.value=data.country_code;country.value=data.country_name;city.value=data.city;ips.value=data.ip;latitude.value=data.latitude;longitude.value = data.longitude;});</script>
 <script>function topicKey(){var ff=document.forms.item('Guest');ff.llen.value=".$maxtopic." - ff.topic.value.length;if(ff.topic.value.length>".$maxtopic.")ff.topic.value=ff.topic.value.substr(0,".$maxtopic.");}</script>
 <form method=post name='Guest' onSubmit='regGuest(); return(false);'>
@@ -3079,7 +3083,7 @@ else document.getElementById('other').innerHTML='<center><input type=submit clas
 
 } else {
 
-	print "<script>initial_sort_id=4; initial_sort_up=1;</script><table cellpadding=2 cellspacing=1 align=center border=0 class=main><thead><th colspan=5><div align=right>";
+	print "<!--script>initial_sort_id=4; initial_sort_up=1;</script--><table cellpadding=2 cellspacing=1 align=center border=0 class=main><thead><th colspan=5><div align=right>";
 
 	if (isset($_COOKIE['cadmin']) && isset($_COOKIE['cpass']) && $_COOKIE['cadmin']==$adminname && $_COOKIE['cpass']==$adminpass)
 	{
@@ -3117,9 +3121,21 @@ else document.getElementById('other').innerHTML='<center><input type=submit clas
 	{
 		$lines=file("datan/topic.dat");
 
+		$i=count($lines);
+
+		do {
+			$i--;
+			$dts=explode("¦", $lines[$i]);
+			if (is_file("data/$dts[2]")) {$stime=filemtime("data/$dts[2]");} else {$stime="";}
+			if ($dts[11]=="vip") {$stime=268;}
+			$newlines[$i]="<!--$stime--> $dts[0]¦$dts[1]¦$dts[2]¦$dts[3]¦$dts[4]¦$dts[5]¦$dts[6]¦$dts[7]¦$dts[8]¦$dts[9]¦$dts[10]¦$dts[11]¦$dts[12]¦$dts[13]¦$dts[14]¦$dts[15]¦$dts[16]¦$dts[17]¦$dts[18]¦$dts[19]¦$dts[20]¦$dts[21]¦$dts[22]¦$dts[23]¦$dts[24]¦";
+		} while($i > 0);
+		rsort($newlines);
+
 		for($a=0; $a<count($lines); $a++)
 		{
-			$dn=explode("¦", $lines[$a]);
+			//$dn=explode("¦", $lines[$a]);
+			$dn=explode("¦", $newlines[$a]);
 
 			if (isset($dn[2]))
 			{
@@ -3149,9 +3165,6 @@ else document.getElementById('other').innerHTML='<center><input type=submit clas
 				if ($dn[11]=="vip") $titletopic="VIP - тема";
 
 				print "<img align=absmiddle src='datan/$dn[11].png' title='$titletopic'></td><td>";
-
-
-
 
 
 				if ($dn[11]=="vip")
