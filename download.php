@@ -1,8 +1,8 @@
 <?php
 /*******************************************************
 LP Download Counter v1.0 release (v1.0.3)
-В© 2004 Leviathan Poductions Media http://www.lpmedia.tk
-В© 2004 Chris Archer http://www.gsinclair.nm.ru
+© 2004 Leviathan Poductions Media http://www.lpmedia.tk
+© 2004 Chris Archer http://www.gsinclair.nm.ru
 
 Usage:
 download.php?file=file.ext (Download file.ext)
@@ -21,16 +21,16 @@ License, or (at your option) any later version.
 
 include "config.php";
 
-$data="$filedir/download.dat"; // Р¤Р°Р№Р» СЃС‚Р°С‚РёСЃС‚РёРєРё
+$data="$filedir/download.dat"; // Файл статистики
 $jscript="application/javascript"; // JavaScript MIME Type Name
 $binary="application/octet-stream"; // Binary file MIME Type
 
 
-////////////////// Р”Р°С‚Р°, РІСЂРµРјСЏ
+////////////////// Дата, время
 $date=gmdate('d.m.Y',time()+3600*($timezone+(date('I')==1?0:1)));
 $time=gmdate('H:i:s',time()+3600*($timezone+(date('I')==1?0:1)));
 
-////////////////// Р§РёСЃС‚РєР°
+////////////////// Чистка
 function replacer($text) {
 	$text=str_replace("|", '', $text);
 	$text=str_replace(">", '', $text);
@@ -48,7 +48,7 @@ function replacer($text) {
 	return $text;
 }
 
-////////////////// РћРїСЂРµРґРµР»РµРЅРёРµ IP
+////////////////// Определение IP
 function getIpAddress() {
 	$check = array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR');
 	$rip = '0.0.0.0';
@@ -94,7 +94,7 @@ if (isset($_GET['file']))
 			if ($filename==$tmpfn)
 			{
 				$filestat++;
-				$file_change[$i]="$filename|$filestat|$date РІ $time|$realip|$host|$hr|$hua\r\n";
+				$file_change[$i]="$filename|$filestat|$date в $time|$realip|$host|$hr|$hua\r\n";
 				$chdone=1;
 				break;
 			}
@@ -162,6 +162,6 @@ if (isset($_GET['filecnt']))
 ErrMess("No files to download!");
 
 // Use $mess to place error message text
-function ErrMess($mess) {die("<h3>Downloader Error</h3><p>$mess</p><i>LP Download Counter В© 2004 <a href=\"http://lpmedia.tk\" target=\"_blank\">Leviathan Productions Media</a></i>");}
+function ErrMess($mess) {die("<h3>Downloader Error</h3><p>$mess</p><i>LP Download Counter © 2004 <a href=\"http://lpmedia.tk\" target=\"_blank\">Leviathan Productions Media</a></i>");}
 
 ?>
