@@ -2,61 +2,49 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	background: #121e1b url(bg1.png);
-	color: #ccc;
-	font-family: Verdana;
+	background: #121e1b url(bg.gif);
+	color: #aaa;
+	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
-	scrollbar-3dlight-color:#CCCC99;
-	scrollbar-arrow-color:#CCCC99;
-	scrollbar-darkshadow-color:#222;
-	scrollbar-face-color:#293345;
-	scrollbar-highlight-color:#293345;
-	scrollbar-shadow-color:#ccc;
-	scrollbar-track-color:#555;
+	scrollbar-face-color:#aaa; 
+	scrollbar-shadow-color:#444; 
+	scrollbar-highlight-color:#444;
+	scrollbar-3dlight-color:#ccc; 
+	scrollbar-darkshadow-color:#ccc;
+	scrollbar-track-color:#ccc; 
+	scrollbar-arrow-color:#444; 
 }
 
 /* Строчки в профиле */
-th {
-	font-size: 12px;
-	font-weight: bold;
-	background: #444;
-	white-space: nowrap;
-	padding: 0 3px;
-	text-align: center;
-	height: 22px;
-	border: #777 1px solid;
-}
-.row1 { 	font-size: 11px; background: #373737; white-space: nowrap; padding: 0 3px; border: #111 0px solid;}
-.row2 { 	font-size: 11px; background: #303030; white-space: nowrap; padding: 0 3px; border: #111 0px solid;}
-
-
+th {font-size: 12px; font-weight: bold; background: #444; white-space: nowrap; padding: 0 3px; text-align: center; height: 22px; border: #777 1px solid;}
+.row1 {font-size: 11px; background: #373737; white-space: nowrap; padding: 0 3px; border: #111 0px solid;}
+.row2 {font-size: 11px; background: #303030; white-space: nowrap; padding: 0 3px; border: #111 0px solid;}
 
 /* Ссылки с названием тем */
 a.topic:link {
-	font-size: 12px;
-	font-family: tahoma;
-	color: #FF9900;
-	text-decoration: none;
-	font-weight: bold;
+		font-family: Arial, Helvetica, sans-serif;
+		color: #079ce9;
+		text-decoration: none;
+		font-weight: bold;
 }
 a.topic:visited {
-	font-size: 12px;
-	font-family: tahoma;
-	color: #FF9900;
-	font-weight: bold;
-	text-decoration: none;
+		font-family: Arial, Helvetica, sans-serif;
+		color: #079ce9;
+		text-decoration: none;
+		font-weight: bold;
 }
 a.topic:hover {
-	text-decoration: underline;
-	color: #FFCC00;
+		font-family: Arial, Helvetica, sans-serif;
+		text-decoration: underline;
+		color: #00c800;
 }
 
 
 /* Ссылки меню форума */
-a:link {text-decoration:none; color:#FF9900;}
-a:visited {text-decoration:none; color:#FF9900;}
-a:hover {text-decoration:none; color:#FFCC00;}
-a:active {text-decoration:none; color:#FFFF00;}
+a:link {text-decoration:none; color:#079ce9;}
+a:visited {text-decoration:none; color:#079ce9;}
+a:hover {text-decoration:none; color:#00c800;}
+a:active {text-decoration:none; color:#00c800;}
 
 
 /* Окно, которое появляется и исчезает в правом верхнем углу */
@@ -97,10 +85,10 @@ a:active {text-decoration:none; color:#FFFF00;}
 
 /* Выпадающее меню смены стиля форума */
 select, option {
-	border:1px solid #000;
-	background:#293345;
-	color:#E2E2E2;
-	font-size:12px;
+		border:1px solid #555;
+		background: #293345 url(bg.gif);
+		color:#c0c0c0;
+		font-size:12px;
 }
 
 
@@ -110,39 +98,34 @@ form {
 	font-size:12px;
 }
 input, textarea {
-	font-size: 12px;
-	width: 100%;
-	height: 20px;
-	border: #777 1px solid;
-	color: #ddd;
-	font-family: tahoma;
-	background: #141A23 url(bg1a.png);
+	font-size:12px;
+	width:100%;
+	height:20px;
+	border:1px solid #555555;
+	background:#141A23 url(bg.gif);
+	color:#ccc;
+	font-family:tahoma;
 }
-
-
-
-/* Кнопки ББ-теги формы */
 input.button {
 	width: 30px;
 	height: 22px;
 	cursor: pointer;
-	background:#222 url(bg1a.png);
+	background:#222;
 	color:#E2E2E2;
 	font-size:12px;
 	font-family:tahoma;
 	border-radius: 2px;
-	border: #777 1px solid;
+	border:1px solid #555555;
 	margin:1px;
 	padding:0 0 0 0;
 }
 input.button:hover {
-	background: #777;
+	background-color: #555;
 	box-shadow: 0 0px #000;
 }
 input.button:active {
 	box-shadow: 0 1px #000;
 }
-
 
 
 
@@ -158,7 +141,6 @@ input.button:active {
 	text-align: bottom;
 }
 
-
 /* Поля ввода ЛОГИН, ПАРОЛЬ и тд */
 
 input[name="llen"],
@@ -167,8 +149,8 @@ input[type="text"],
 input[type="password"] {
 	height: 30px;
 	padding: 3px 5px;
-	/* background-color: #fff; */
-	border: 1px solid #777;
+	/* background: #555; */
+	border: 1px solid #555;
 	border-radius: 4px;
 	box-shadow: none;
 	box-sizing: border-box;
@@ -186,18 +168,19 @@ select:focus {
 
 
 
-/* Кнопки УДАЛИТЬ и ОТПРАВИТЬ */
 
+
+/* Кнопки УДАЛИТЬ и ОТПРАВИТЬ */
 .fbutton {
 	height: 28px;
-	cursor: pointer;
 	width: 90px;
-	border: 1px solid #777;
+	cursor: pointer;
+	border: 1px solid #000;
 	border-radius: 3px;
-	background: #3d3d3d;
+	background: #333;
 }
 .fbutton:hover  {
-	background-color: #606070;
+	background-color: #555;
 	box-shadow: 0 0px #000;
 }
 
@@ -206,72 +189,70 @@ select:focus {
 a.pagination,
 a.pagination:visited,
 a.pagination:active {
-		padding: 2 5px;
+		padding: 0 5px;
 		line-height: 16pt;
 		border-radius: 3px;
-		border: 1px solid #222;
+		border: 1px solid #777;
 		text-decoration: none; 
-		color: #ddd;
-		background: #555;
+		color: #999;
+		background:#555;
 }
 
 a.pagination:hover {
-		border: 1px solid #222;
+		border: 1px solid #00c800;
 		font-weight: bold;
 		color: #000;
-		background: #FF9900;
+		background-color: #00c800;
 }
 
 .currentpage {
-		padding: 2 5px;
+		padding: 0 5px;
 		border-radius: 3px;
-		border: 1px solid #2e6ab1;
-		background: #2e6ab1;
+		border: 1px solid #079ce9;
+		background-color: #079ce9;
 		color: #ddd;
 		font-weight: bold;
 		cursor: default;
 }
 
 
-/* Размеры шрифта */
 
+
+/* Размеры шрифта */
 .norm {font-size: 10pt;}
 .med {font-size: 11px;}
-.small {font-size: 10px; font-family:verdana;}
+.small {font-size: 10px;}
 
 
 /* Настройки ширины таблиц форума, фона и цвета ячеек и т.д. */
+table.main {width:95%; font-size: 10pt;}
+table.main td {font-size:10pt; background: #252525;}
 
-table.main {width:90%; font-size: 9pt; background:#222 url(bg1.gif);}
-table.main td {font-size:9pt; background: url(bg1a.png);}
+table.f {width:95%; background: #111;}
+table.f td {background: #151515 url(bg.gif);}
 
-table {font-family:tahoma; font-size:12px;}
+table.f td.t {font-weight:bold; font-family:tahoma; font-size:12px; height:22px; padding:3 5 3 5; background:#333}
 
-table.f {width:90%; font-size:12px; background: url(bg1.gif);}
-table.f td {font-size:12px; background:#333 url(bg1.gif);}
+table.f td.name {width:200px; padding-top:2; font-weight:bold; font-family:tahoma; text-align:center; background:#222}
+table.f td.date {width:80%; padding:1 1 1 5; font:bold 10 arial; color:#555;  background:#222}
+table.f td.up {width:300; padding:0 5 0 0; font:bold 10 arial; text-align:right; color:#E2E2E2;  background:#222}
+table.f td.msg {width:100%; height:120px; padding:5 0 3 5; text-align:left; color:#999; background:#222}
 
-table.f td.t {font-weight:bold; font-family:tahoma; font-size:12px; padding:3 5 3 5; background:#292929}
-
-table.f td.name {width:180px; padding-top:2; font-weight:bold; font-family:tahoma; text-align:center; background:#333 url(bg1a.png)}
-table.f td.date {width:80%; padding:1 1 1 5; font:bold 8 arial; color:#999;  background:#333 url(bg1a.png)}
-table.f td.up {width:500px; padding:0 5 0 0; font:bold 10 arial; text-align:right; color:#E2E2E2;  background:#333 url(bg1a.png)}
-table.f td.msg {width:100%; height:120px; padding:5 0 3 5; text-align:left; color:#E2E2E2; background:#333 url(bg1a.png)}
-
-tr.th td {height:22px; text-align:center; font-weight:bold; color:#ddd; font-family:tahoma; font-size:12px; background:#333;}
+tr.th td {height:22px; text-align:center; font-weight:bold; color:#ccc; background:#353535; font-family:tahoma;}
 
 
-/* Ссылка темы (Тема: ...) и меню (Ответить Список тем Новая тема) */
-table.f td.t a {text-decoration:underline; color:#E2E2E2}
-table.f td.t a:hover {text-decoration:underline; color:red}
+/* Ссылка темы (Тема: ...) и меню (Ответить - Список тем - Новая тема) */
+table.f td.t a {text-decoration:underline;color:#079ce9}
+table.f td.t a:hover {text-decoration:underline;color:#00c800}
 
 
 /* Стиль ссылок ников слева от сообщений */
-a.name {text-decoration:none; color:#F4B968;}
-a.name:hover {text-decoration:underline; color:red;}
+a.name {color:#079ce9; text-decoration:none}
+a.name:hover {color:#ccc;text-decoration:underline}
 
 
 /* Вид поля с цитируемым текстом */
-.q {margin-left:15px; margin-right:15px; margin-top:10px; padding-left:5px; padding-right:5px; padding-top:3px; padding-bottom:3px; border:1px dotted #999; background:#393939}
+.q {margin-left:15px; margin-right:15px; margin-top:10px; padding-left:5px; padding-right:5px; padding-top:3px; padding-bottom:3px; border:1px solid #111; background:#333}
 
 
 /* Код (кнопка)
@@ -280,25 +261,26 @@ a.name:hover {text-decoration:underline; color:red;}
 .code {
     margin: 5px 5px 5px 5px;
     padding: 10px 10px;
-    border: #999 1px dotted;
+    border: #555 1px dotted;
     font-size: 11px;
     font-family: Monaco, 'Courier New', monospace;
-    background: #393939;
+    background: #333;
 }
+
 
 
 /* Для сортировки колонок форума */
 table.main thead td {
-	cursor:pointer;
-	cursor:hand;
-	font-weight:bold;
-	text-align:center;
-	vertical-align:middle
+cursor:pointer;
+cursor:hand;
+font-weight:bold;
+text-align:center;
+vertical-align:middle
 }
 
 
-/* Tooltip Всплывающая подсказка 
-========================*/
+/* Tooltip Всплывающая подсказка для статуса
+==================================*/
 .tooltip {
 	cursor:help;
 	position: relative;
@@ -339,4 +321,27 @@ table.main thead td {
 .tooltip:hover .tooltiptext {
 	visibility: visible;
 	opacity: 1;
+}
+
+/* Tooltip Всплывающая подсказка БАНа и Предупр.
+====================================*/
+.cont {
+	position:relative;
+}
+.text-block {
+	position:absolute;top:0px;right:50px;
+}
+.holder {
+	position:relative;
+}
+.holder:hover .block {display:block;}
+
+.block {
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	background:rgba(0,0,0,0.5);
+	padding:5px;
+	display:none;
 }

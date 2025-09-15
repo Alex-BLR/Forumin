@@ -2,49 +2,44 @@
 body {
 	margin: 0px;
 	padding: 0px;
-	background: #121e1b url(bg.gif);
-	color: #aaa;
-	font-family: Arial, Helvetica, sans-serif;
+	background: #121e1b url(bg-notify.png);
+	color: #E2E2E2;
+	font-family: Verdana;
 	font-size: 10pt;
-	scrollbar-face-color:#aaa; 
-	scrollbar-shadow-color:#444; 
-	scrollbar-highlight-color:#444;
-	scrollbar-3dlight-color:#ccc; 
-	scrollbar-darkshadow-color:#ccc;
-	scrollbar-track-color:#ccc; 
-	scrollbar-arrow-color:#444; 
+	scrollbar-3dlight-color:#CCCC99;
+	scrollbar-arrow-color:#CCCC99;
+	scrollbar-darkshadow-color:#222;
+	scrollbar-face-color:#293345;
+	scrollbar-highlight-color:#293345;
+	scrollbar-shadow-color:#ccc;
+	scrollbar-track-color:#555;
 }
 
 /* Строчки в профиле */
-th {font-size: 12px; font-weight: bold; background: #444; white-space: nowrap; padding: 0 3px; text-align: center; height: 22px; border: #777 1px solid;}
-.row1 {font-size: 11px; background: #373737; white-space: nowrap; padding: 0 3px; border: #111 0px solid;}
-.row2 {font-size: 11px; background: #303030; white-space: nowrap; padding: 0 3px; border: #111 0px solid;}
+th { 	font-size: 12px; font-weight: bold; background: #444; white-space: nowrap; padding: 0 3px; text-align: center; height: 22px; border: #777 1px solid;}
+.row1 { 	font-size: 11px; background: #373737; white-space: nowrap; padding: 0 3px; border: #111 0px solid;}
+.row2 { 	font-size: 11px; background: #303030; white-space: nowrap; padding: 0 3px; border: #111 0px solid;}
 
 /* Ссылки с названием тем */
 a.topic:link {
-		font-family: Arial, Helvetica, sans-serif;
-		color: #079ce9;
-		text-decoration: none;
-		font-weight: bold;
+	font-size: 12px;
+	font-family: tahoma;
+	color: #FF9900;
+	text-decoration: none;
+	font-weight: bold;
 }
 a.topic:visited {
-		font-family: Arial, Helvetica, sans-serif;
-		color: #079ce9;
-		text-decoration: none;
-		font-weight: bold;
+	font-size: 12px;
+	font-family: tahoma;
+	color: #FF9900;
+	font-weight: bold;
+	text-decoration: none;
 }
-a.topic:hover {
-		font-family: Arial, Helvetica, sans-serif;
-		text-decoration: underline;
-		color: #00c800;
-}
+a.topic:hover {text-decoration: underline; color: #FFCC00;}
 
 
 /* Ссылки меню форума */
-a:link {text-decoration:none; color:#079ce9;}
-a:visited {text-decoration:none; color:#079ce9;}
-a:hover {text-decoration:none; color:#00c800;}
-a:active {text-decoration:none; color:#00c800;}
+a:link {text-decoration:none; color:#FF9900;}a:visited {text-decoration:none; color:#FF9900;}a:hover {text-decoration:none; color:#FFCC00;}a:active {text-decoration:none; color:#FFFF00;}
 
 
 /* Окно, которое появляется и исчезает в правом верхнем углу */
@@ -85,12 +80,11 @@ a:active {text-decoration:none; color:#00c800;}
 
 /* Выпадающее меню смены стиля форума */
 select, option {
-		border:1px solid #555;
-		background: #293345 url(bg.gif);
-		color:#c0c0c0;
-		font-size:12px;
+	border: 1px solid #222;
+	background:#222;
+	color:#c2c2c2;
+	font-size:12px;
 }
-
 
 /* Оформление форм и полей ввода текста */
 form {
@@ -98,13 +92,13 @@ form {
 	font-size:12px;
 }
 input, textarea {
-	font-size:12px;
-	width:100%;
-	height:20px;
-	border:1px solid #555555;
-	background:#141A23 url(bg.gif);
+	font-size: 12px;
+	width: 100%;
+	height: 19px;
+	border: 1px solid #555;
+	background: #141A23 url(body.gif);
 	color:#ccc;
-	font-family:tahoma;
+	font-family: tahoma;
 }
 input.button {
 	width: 30px;
@@ -149,7 +143,7 @@ input[type="text"],
 input[type="password"] {
 	height: 30px;
 	padding: 3px 5px;
-	/* background: #555; */
+	/* background-color: #fff; */
 	border: 1px solid #555;
 	border-radius: 4px;
 	box-shadow: none;
@@ -168,21 +162,20 @@ select:focus {
 
 
 
-
-
 /* Кнопки УДАЛИТЬ и ОТПРАВИТЬ */
 .fbutton {
+	cursor: pointer;
 	height: 28px;
 	width: 90px;
-	cursor: pointer;
-	border: 1px solid #000;
-	border-radius: 3px;
+	border: 1px solid #222;
+	border-radius: 4px;
 	background: #333;
 }
 .fbutton:hover  {
 	background-color: #555;
 	box-shadow: 0 0px #000;
 }
+
 
 
 /* Нумерация страниц в темах */
@@ -192,29 +185,28 @@ a.pagination:active {
 		padding: 0 5px;
 		line-height: 16pt;
 		border-radius: 3px;
-		border: 1px solid #777;
+		border: 1px solid #999;
 		text-decoration: none; 
-		color: #999;
+		color: #ddd;
 		background:#555;
 }
 
 a.pagination:hover {
-		border: 1px solid #00c800;
+		border: 1px solid #FF9900;
 		font-weight: bold;
 		color: #000;
-		background-color: #00c800;
+		background-color: #FF9900;
 }
 
 .currentpage {
 		padding: 0 5px;
 		border-radius: 3px;
-		border: 1px solid #079ce9;
-		background-color: #079ce9;
+		border: 1px solid #2e6ab1;
+		background-color: #2e6ab1;
 		color: #ddd;
 		font-weight: bold;
 		cursor: default;
 }
-
 
 
 
@@ -225,34 +217,36 @@ a.pagination:hover {
 
 
 /* Настройки ширины таблиц форума, фона и цвета ячеек и т.д. */
-table.main {width:95%; font-size: 10pt;}
-table.main td {font-size:10pt; background: #252525;}
+table.main {width:95%; font-size: 9pt; }
+table.main td {font-size:10pt; background: url(body.gif);}
 
-table.f {width:95%; background: #111;}
-table.f td {background: #151515 url(bg.gif);}
+table.f {width:95%; background: url(bg-notify.png);}
+table.f td {background: #111}
 
-table.f td.t {font-weight:bold; font-family:tahoma; font-size:12px; height:22px; padding:3 5 3 5; background:#333}
+table.f td.t {font-weight:bold; font-family:tahoma; font-size:12px; padding:3 5 3 5; background:#222}
 
-table.f td.name {width:200px; padding-top:2; font-weight:bold; font-family:tahoma; text-align:center; background:#222}
-table.f td.date {width:80%; padding:1 1 1 5; font:bold 10 arial; color:#555;  background:#222}
-table.f td.up {width:300; padding:0 5 0 0; font:bold 10 arial; text-align:right; color:#E2E2E2;  background:#222}
-table.f td.msg {width:100%; height:120px; padding:5 0 3 5; text-align:left; color:#999; background:#222}
+table.f td.name {width:200px; padding-top:2; font-weight:bold; font-family:tahoma; text-align:center; background:#333 url(body.gif)}
+table.f td.date {width:80%; padding:1 1 1 5; font:bold 10 arial; color:#999;  background:#333 url(body.gif)}
+table.f td.up {width:300; padding:0 5 0 0; font:bold 10 arial; text-align:right; color:#E2E2E2;  background:#333 url(body.gif)}
+table.f td.msg {width:100%; height:120px; padding:5 0 3 5; text-align:left; color:#E2E2E2; background:#333 url(body.gif)}
 
-tr.th td {height:22px; text-align:center; font-weight:bold; color:#ccc; background:#353535; font-family:tahoma;}
+tr.th td {height:22px; text-align:center; font-weight:bold; color:#ddd; background:#333; font-family:tahoma;}
 
 
-/* Ссылка темы (Тема: ...) и меню (Ответить - Список тем - Новая тема) */
-table.f td.t a {text-decoration:underline;color:#079ce9}
-table.f td.t a:hover {text-decoration:underline;color:#00c800}
+/* Ссылка темы (Тема: ...) и меню (Ответить Список тем Новая тема) */
+table.f td.t a {text-decoration:underline;color:#E2E2E2}
+table.f td.t a:hover {text-decoration:underline}
 
 
 /* Стиль ссылок ников слева от сообщений */
-a.name {color:#079ce9; text-decoration:none}
-a.name:hover {color:#ccc;text-decoration:underline}
+a.name {color:#F4B968; text-decoration:none}
+a.name:hover {text-decoration:underline}
 
 
-/* Вид поля с цитируемым текстом */
-.q {margin-left:15px; margin-right:15px; margin-top:10px; padding-left:5px; padding-right:5px; padding-top:3px; padding-bottom:3px; border:1px solid #111; background:#333}
+/* Цитата (кнопка)
+=============*/
+.q {margin-left:15px; margin-right:15px; margin-top:10px; padding-left:5px; padding-right:5px; padding-top:3px; padding-bottom:3px; border:1px dotted #555; background:#333}
+
 
 
 /* Код (кнопка)
@@ -268,7 +262,6 @@ a.name:hover {color:#ccc;text-decoration:underline}
 }
 
 
-
 /* Для сортировки колонок форума */
 table.main thead td {
 cursor:pointer;
@@ -279,8 +272,8 @@ vertical-align:middle
 }
 
 
-/* Tooltip Всплывающая подсказка 
-========================*/
+/* Tooltip Всплывающая подсказка для статуса
+==================================*/
 .tooltip {
 	cursor:help;
 	position: relative;
@@ -321,4 +314,27 @@ vertical-align:middle
 .tooltip:hover .tooltiptext {
 	visibility: visible;
 	opacity: 1;
+}
+
+/* Tooltip Всплывающая подсказка БАНа и Предупр.
+====================================*/
+.cont {
+	position:relative;
+}
+.text-block {
+	position:absolute;top:0px;right:50px;
+}
+.holder {
+	position:relative;
+}
+.holder:hover .block {display:block;}
+
+.block {
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	background:rgba(0,0,0,0.5);
+	padding:5px;
+	display:none;
 }
