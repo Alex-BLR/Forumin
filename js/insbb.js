@@ -4,15 +4,15 @@ function answerGuest() {
 	obj_pole_email=obj_form.email;
 	obj_pole_msg=obj_form.msg;
 
-	if (obj_pole_name.value=='') {alert('Введите свое имя!'); return;}
+	if (obj_pole_name.value=='') {alert('Р’РІРµРґРёС‚Рµ СЃРІРѕРµ РёРјСЏ!'); return;}
 
-	if (obj_pole_email.value=='') {alert('Введите свой E-mail адрес!'); return;}
-	if (obj_pole_email.value.indexOf('@')==-1) {alert('Введите корректный E-mail адрес!'); return;}
-	if (obj_pole_email.value.indexOf('.')==-1) {alert('Повторяю, введите корректный E-mail адрес!'); return;}
+	if (obj_pole_email.value=='') {alert('Р’РІРµРґРёС‚Рµ СЃРІРѕР№ E-mail Р°РґСЂРµСЃ!'); return;}
+	if (obj_pole_email.value.indexOf('@')==-1) {alert('Р’РІРµРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Р№ E-mail Р°РґСЂРµСЃ!'); return;}
+	if (obj_pole_email.value.indexOf('.')==-1) {alert('РџРѕРІС‚РѕСЂСЏСЋ, РІРІРµРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Р№ E-mail Р°РґСЂРµСЃ!'); return;}
 
 	textMsg=obj_pole_msg.value;
-	if (textMsg=='') {alert('Введите свое сообщение!'); return;}
-	if (textMsg.length<2) {alert('Длина сообщения должна быть не менее 2-х символов'); return;}
+	if (textMsg=='') {alert('Р’РІРµРґРёС‚Рµ СЃРІРѕРµ СЃРѕРѕР±С‰РµРЅРёРµ!'); return;}
+	if (textMsg.length<2) {alert('Р”Р»РёРЅР° СЃРѕРѕР±С‰РµРЅРёСЏ РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РЅРµ РјРµРЅРµРµ 2-С… СЃРёРјРІРѕР»РѕРІ'); return;}
 
 	obj_form.submit();
 }
@@ -23,17 +23,17 @@ function regGuest() {
 	obj_pole_mail=obj_form.mail;
 	obj_pole_topic=obj_form.topic;
 
-	if (obj_pole_name.value=='') {alert('Введите свое имя!'); return;}
+	if (obj_pole_name.value=='') {alert('Р’РІРµРґРёС‚Рµ СЃРІРѕРµ РёРјСЏ!'); return;}
 
 	txt=obj_pole_mail.value;
 
-	if (txt=='') {alert('Введите свой E-mail адрес!'); return;}
-	if (txt.indexOf('@')==-1) {alert('Введите корректный E-mail адрес!'); return;}
-	if (txt.indexOf('.')==-1) {alert('Повторяю, введите корректный E-mail адрес!'); return;}
+	if (txt=='') {alert('Р’РІРµРґРёС‚Рµ СЃРІРѕР№ E-mail Р°РґСЂРµСЃ!'); return;}
+	if (txt.indexOf('@')==-1) {alert('Р’РІРµРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Р№ E-mail Р°РґСЂРµСЃ!'); return;}
+	if (txt.indexOf('.')==-1) {alert('РџРѕРІС‚РѕСЂСЏСЋ, РІРІРµРґРёС‚Рµ РєРѕСЂСЂРµРєС‚РЅС‹Р№ E-mail Р°РґСЂРµСЃ!'); return;}
 
 	textTopic=obj_pole_topic.value;
-	if (textTopic=='') {alert('Введите название темы!'); return;}
-	if (textTopic.length<2) {alert('Длина темы должна быть не менее 2-х символов'); return;}
+	if (textTopic=='') {alert('Р’РІРµРґРёС‚Рµ РЅР°Р·РІР°РЅРёРµ С‚РµРјС‹!'); return;}
+	if (textTopic.length<2) {alert('Р”Р»РёРЅР° С‚РµРјС‹ РґРѕР»Р¶РЅР° Р±С‹С‚СЊ РЅРµ РјРµРЅРµРµ 2-С… СЃРёРјРІРѕР»РѕРІ'); return;}
 
 	obj_form.submit();
 }
@@ -153,12 +153,12 @@ function toggleStats() {
 function seeTextArea(form) {
 	myWin = open("#", "displayWindow", "width=800,height=600,status=1,toolbar=1,menubar=1,resizable=1,border=0,scrollbars=1");
 	myWin.document.open();
-	myWin.document.write("<html><head><title>Предварительный просмотр</title>");
+	myWin.document.write("<html><head><title>РџСЂРµРґРІР°СЂРёС‚РµР»СЊРЅС‹Р№ РїСЂРѕСЃРјРѕС‚СЂ</title>");
 	myWin.document.write("<meta http-equiv='Content-Type' content='text/html; charset=windows-1251'>");
 	myWin.document.write("<link type='text/css' rel='stylesheet' href='images-amBase/style5.css'></head>");
 	myWin.document.write("<body><table width=100% height=100% border=0><tr valign=top><td>");
 	myWin.document.write(FilterScript(form.msg.value));
-	myWin.document.write("</td></tr><tr><td height=20 align=center><b><a href='#' onClick='self.close()' style='font-family:tahoma;font-size:14px;'>Закрыть окно</a></b></td></tr></body></html>");
+	myWin.document.write("</td></tr><tr><td height=20 align=center><b><a href='#' onClick='self.close()' style='font-family:tahoma;font-size:14px;'>Р—Р°РєСЂС‹С‚СЊ РѕРєРЅРѕ</a></b></td></tr></body></html>");
 	myWin.document.close();
 }
 
@@ -192,20 +192,20 @@ function FilterScript(str) {
 	str=str.replace(/\[right\]/ig,"<div align=right>");
 	str=str.replace(/\[\/right\]/ig,"</div>");
 
-	str=str.replace(/\[hide=(.+?)\](.+?)\[\/hide\]/ig,"<span class=med style='background-color:#ddd;font-style:italic'><b>Шёпотом</b> для <b>$1</b>: $2&nbsp;</span>");
-	str=str.replace(/\[hide\]/ig,"<fieldset align=center style='width:90%;border:solid 1px #777'><div style='PADDING-LEFT:6px;PADDING-BOTTOM:2px;' align=left><legend align=left class=med>Скрыто от гостей</legend>");
+	str=str.replace(/\[hide=(.+?)\](.+?)\[\/hide\]/ig,"<span class=med style='background-color:#ddd;font-style:italic'><b>РЁС‘РїРѕС‚РѕРј</b> РґР»СЏ <b>$1</b>: $2&nbsp;</span>");
+	str=str.replace(/\[hide\]/ig,"<fieldset align=center style='width:90%;border:solid 1px #777'><div style='PADDING-LEFT:6px;PADDING-BOTTOM:2px;' align=left><legend align=left class=med>РЎРєСЂС‹С‚Рѕ РѕС‚ РіРѕСЃС‚РµР№</legend>");
 	str=str.replace(/\[\/hide\]/ig,"</div></fieldset>");
 
-	str=str.replace(/\[spoiler\]/ig,"<div style='margin:10px;margin-top:5px'><div style='margin-bottom:2px'><small>Скрытый текст</small> <input type='button' class='button' value='Показать' style='width:60px;font-size:10px;margin:0px;padding:0px;BORDER:1px solid;cursor:hand' onClick=\"if(this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display !=''){this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display=''; this.innerText=''; this.value='Скрыть';} else {this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display='none'; this.innerText=''; this.value='Показать';}\"></div><div style='margin:0px;padding:3px;border:solid 0px #090909;background-color:#ddd;font-size:11px'><div style='display:none'>");
+	str=str.replace(/\[spoiler\]/ig,"<div style='margin:10px;margin-top:5px'><div style='margin-bottom:2px'><small>РЎРєСЂС‹С‚С‹Р№ С‚РµРєСЃС‚</small> <input type='button' class='button' value='РџРѕРєР°Р·Р°С‚СЊ' style='width:60px;font-size:10px;margin:0px;padding:0px;BORDER:1px solid;cursor:hand' onClick=\"if(this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display !=''){this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display=''; this.innerText=''; this.value='РЎРєСЂС‹С‚СЊ';} else {this.parentNode.parentNode.getElementsByTagName('div')[1].getElementsByTagName('div')[0].style.display='none'; this.innerText=''; this.value='РџРѕРєР°Р·Р°С‚СЊ';}\"></div><div style='margin:0px;padding:3px;border:solid 0px #090909;background-color:#ddd;font-size:11px'><div style='display:none'>");
 	str=str.replace(/\[\/spoiler\]/ig,"</div></div></div>");
 
-	str=str.replace(/\[quote\]/ig,"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><U><small>Цитата:</small></U></B><table width=95% border=0 cellpadding=3 cellspacing=1 style='margin-left:18px;padding:5px;margin-top:1px'><tr><td class=q>");
+	str=str.replace(/\[quote\]/ig,"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><U><small>Р¦РёС‚Р°С‚Р°:</small></U></B><table width=95% border=0 cellpadding=3 cellspacing=1 style='margin-left:18px;padding:5px;margin-top:1px'><tr><td class=q>");
 	str=str.replace(/\[\/quote\]/ig,"</td></tr></table>");
 
-	str=str.replace(/\[code\]/ig,"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><U><small>Код:</small></U></B><table width=95% border=0 cellpadding=3 cellspacing=1 style='margin-left:18px;padding:5px;margin-top:1px'><tr><td class=code>");
+	str=str.replace(/\[code\]/ig,"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><U><small>РљРѕРґ:</small></U></B><table width=95% border=0 cellpadding=3 cellspacing=1 style='margin-left:18px;padding:5px;margin-top:1px'><tr><td class=code>");
 	str=str.replace(/\[\/code\]/ig,"</td></tr></table>");
 
-	str=str.replace(/\[html\]/ig,"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><U><small>Код:</small></U></B><br><textarea rows=6 wrap=on readonly style=\"width:97%;margin-left:18px;padding:5px;margin-top:1px\" class=code>");
+	str=str.replace(/\[html\]/ig,"<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<B><U><small>РљРѕРґ:</small></U></B><br><textarea rows=6 wrap=on readonly style=\"width:97%;margin-left:18px;padding:5px;margin-top:1px\" class=code>");
 	str=str.replace(/\[\/html\]/ig,"</textarea>");
 
 	str=str.replace(/\[youtube\]https?:\/\/(?:[a-z\d-]+\.)?youtu(?:be(?:-nocookie)?\.com\/.*v=|\.be\/)([-\w]{11})(?:.*[\?&#](?:star)?t=([\dhms]+))?\[\/youtube\]/ig, "<br><object width=640px height=480px><param name=movie value=\"http://www.youtube.com/v/$1\"></param><param name=allowFullScreen value=true></param><param name=allowscriptaccess value=always></param><embed src=\"https://www.youtube.com/v/$1\" type=\"application/x-shockwave-flash\" allowscriptaccess=always allowfullscreen=true width=640px height=480px></embed></object><br>");
