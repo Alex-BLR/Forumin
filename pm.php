@@ -7,17 +7,12 @@ include "config.php";
 
 $datapmdir="data-pm"; // Папка с личными сообщениями
 
-
 $shapka='<html><head>
 <title>Отправка / Просмотр ЛС</title>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1251">
 <meta http-equiv="Content-Language" content="ru">
 <link rel="stylesheet" href="'.$fskin.'/style.css" type="text/css">
-<SCRIPT>
-function x(){return;}
-function FocusText(){document.REPLIER.msg.focus();document.REPLIER.msg.select();return true;}
-function DoPrompt(action){var revisedMessage; var currentMessage=document.REPLIER.msg.value;}
-</SCRIPT>
+<script>function x(){return;}function FocusText(){document.REPLIER.msg.focus();document.REPLIER.msg.select();return true;}function DoPrompt(action){var revisedMessage; var currentMessage=document.REPLIER.msg.value;}</script>
 </head>
 <body bgcolor="#E5E5E5" text="#000000" link="#006699" vlink="#5493B4">
 <center><BR><BR><BR>';
@@ -49,7 +44,7 @@ if (isset($_COOKIE['cname']) and isset($_COOKIE['cpassreg']))
 
 	} while($i < $maxi);
 
-} else echo "$shapka <br><br><br><font color=red size=3><b>Личные сообщения только для зарегистрированных пользователей!</b></font><br>";
+} else echo "$shapka <br><br><br><font color=red><b>Личные сообщения только для зарегистрированных пользователей!</b></font>";
 
 
 
@@ -94,10 +89,10 @@ if ($flag===TRUE)
 		}
 
 		////////////// Блок УДАЛЕНИЯ выбранного СООБЩЕНИЯ
-		if (isset($_GET['deletemsg']))
+		if (isset($_GET['delmsg']))
 		{ 
-			$num=replacer($_GET['deletemsg']);
-			if ($num=="" or strlen($num)<5) exit("$shapka ОШИБКА! Не выбрано сообщение для удаления!");
+			$num=replacer($_GET['delmsg']);
+			if ($num=="" or strlen($num)<5) exit("$shapka ОШИБКА! Не выбрано удаляемое сообщение!");
 
 			if (is_file("$datapmdir/$id.dat"))
 			{
@@ -117,21 +112,20 @@ if ($flag===TRUE)
 		}
 
 		///////////// ОЧИСТКА ЯЩИКА
-		if (isset($_GET['alldelete']))
+		if (isset($_GET['alldel']))
 		{ 
 			if ($id==$name & is_file("$datapmdir/$id.dat"))
 			{
 				unlink ("$datapmdir/$id.dat");
 				print "$shapka <p align=center><b>Личные сообщения удалены!</b><br><br>Вы можете перейти на <a href='index.php'>главную страницу форума</a></p>";
-			}
-			else exit("$shapka У вас отсутствуют сообщения!<br><br>[<a href='javascript:history.back(1)'>&#9668; назад</a>]");
+			} else
+				exit("$shapka У вас нет сообщений!<br><br>[<a href='javascript:history.back(1)'>&#9668; назад</a>]");
 		}
 
 		////////////// ОТПРАВКА СООБЩЕНИЯ
 		if (isset($_GET['sendpm']))
 		{ 
-			print "$shapka <center><br><br><B>Сообщение отправлено!</B><br><br><br>Вы можете закрыть это окно, либо перейти в папку с вашими ЛС <br><br><b>[<a href='pm.php?readpm&id=$name' target='_new'>Перейти к моим ЛС</a>]</b>";
-			exit;
+			exit("$shapka <center><br><br><B>Сообщение отправлено!</B><br><br><br>Вы можете закрыть это окно, либо перейти в папку с вашими ЛС <br><br><b>[<a href='pm.php?readpm&id=$name' target='_new'>Перейти к моим ЛС</a>]</b>");
 		}
 
 		/////////////// ПРОСМОТР СООБЩЕНИЙ
@@ -171,9 +165,10 @@ if ($flag===TRUE)
 
 						print"<tr height=120><td class=row2 valign=top rowspan=2><br><center><b>$edt[5]</b><br><br><small><i>$data</i>&nbsp; [#<b>$number</b>]</small><br><br><br><br>";
 
-						print"[<a href='pm.php?id=$id&deletemsg=$edt[1]' onclick=\"return confirm('Удалить это сообщение?')\" style=\"text-decoration:;font-weight:;font-size:11px;\">удалить</a>] &nbsp;";
+						print"[<a href='pm.php?id=$id&delmsg=$edt[1]' onclick=\"return confirm('Удалить это сообщение?')\" style=\"text-decoration:none;font-size:11px;\">удалить</a>] &nbsp;";
 
-						if ($type==0) print"[<a href=\"pm.php?id=$edt[5]\" style=\"text-decoration:;font-weight:;font-size:11px;\">ответить</a>]</td><td class=row1 width=100% height=100 valign=top><table border=0 width=100% height=100%><tr valign=center><td><p align=justify>Тема: <font color=navy><U>$edt[7]</U></font><br>$edt[8]</p></td></tr></table></td></tr>";
+						//href='pm.php?id=$edt[5]'
+						if ($type==0) print"[<a href='#' name=citata onclick=\"window.open('pm.php?id=$edt[5]','citata','width=800,height=500,left=100,top=100,toolbar=0,status=0,border=0,scrollbars=1');return false;\" style='text-decoration:none;font-size:11px'>ответить</a>]</td><td class=row1 width=100% height=100px valign=top><table border=0 width=100% height=100%><tr valign=center><td><p align=justify>Тема: <font color=navy><u>$edt[7]</u></font><br>$edt[8]</p></td></tr></table></td></tr>";
 
 
 						////////////// БЛОК быстрого ОТВЕТА
@@ -182,39 +177,35 @@ if ($flag===TRUE)
 <FORM action='pm.php?savepm&id=$edt[5]' method=post name=REPLIER><center>
 <font class=norm><details style='cursor:pointer'><summary>Быстрый ответ</summary><br>
 <table cellpadding=2 cellspacing=0 width=800 border=0>
-<tr><td class=row1 align=center><font class=norm>Ответить пользователю <b>$edt[5]</b></font></td></tr>
-<tr><td>Тема: <input type=text name=tema value='RE: $edt[7]' style='width:100%' title='Не более $maxtopic симв'></td></tr>
+<tr><td align=center><font class=norm>Ответить пользователю <b>$edt[5]</b></font></td></tr>
+<tr><td>Тема: <input type=text name=tema value='RE: $edt[7]' style='width:100%' title='Не более $maxtopic симв.'></td></tr>
 <tr><td>Сообщение <small>(не более $maxmsg симв)</small><br><textarea name=msg cols=92 rows=11 style='width:100%;height:150px'></textarea></td></tr>
 <tr><td align=center><input type=submit class=button style='width:100px;height:25px' value='Отправить'><br></td></tr>
 </table></details></font></form>";
 
 					} while($ri>0);
 
-					echo"</TD></tr></table><p align=right><b>[<a href='pm.php?alldelete&id=$name' onclick=\"return confirm('Удалить все сообщения?')\">Удалить сообщения</a>] &nbsp; &nbsp; [<a href='index.php'>Вернуться на форум</a>]</b>&nbsp;</p>";
+					echo"</TD></tr></table><p align=right><b>[<a href='pm.php?alldel&id=$name' onclick=\"return confirm('Удалить все сообщения?')\">Удалить сообщения</a>] &nbsp; [<a href='index.php'>вернуться на форум</a>]</b>&nbsp;</p>";
 
 				} else {
 					print "$shapka";
 
 					echo'<br><center><font style="font-size:14px;font-family:tahoma">Личные сообщения <b>'.$id.'</b><br></font><br><table class=forumline width=80% cellspacing=1 cellpadding=0><tr><th class=thLeft width=170 height=22></th><th>&nbsp;<p align=center></p></th></tr>';
 
-					print "<tr height=150><td class=row2 valign=top colspan=2><span class=name><br><center><center><h2>Ваша папка ПУСТА<br></h2>";
+					print "<tr height=150><td class=row2 valign=top colspan=2><span class=name><br><center><center><h2>У вас нет сообщений!<br></h2>";
 
 					if (isset($_GET['user'])) $useremail=$_GET['user']; else $useremail="";
 
-					if (isset($_GET['autoscribe'])) $autoscribe=$_GET['autoscribe']; else $autoscribe="";
+					print"<center><TABLE cellPadding=2 cellSpacing=1 width=775 border=0><br><FORM action='pm.php?savepm' method=post><TBODY><TR><TD align=middle colSpan=2></TD></TR><TR><TD align=center>Отправитель: <B>$id</B> &nbsp; | &nbsp; Получатель: ";
 
-					if (($autoscribe=="1") and ($useremail=="")) exit("<br><br><h2>Вернитесь назад! Вам необходимо отредактировать текст, выбрать 1-го пользователи и нажать кнопку 'Сохранить и отправить рассылку'!");
-
-					print"<center><TABLE cellPadding=2 cellSpacing=1 width=775 border=0><br><FORM action='pm.php?savepm' method=post><TBODY><TR><TD align=middle colSpan=2></TD></TR><TR bgColor=#dddddd><TD>Отправитель: <B>$id</B> &nbsp; Получатель: ";
-
-					echo'<SELECT name=id class=maxiinput><option value="">Выберите участника</option>\r\n';
+					echo'<SELECT name=id class=maxiinput><option value=""> Выбрать </option>\r\n';
 
 					// Блок считывает всех пользователей из файла
 					if (is_file("datan/usersdat.php")) $lines=file("datan/usersdat.php");
 
 					if (!isset($lines)) $datasize=0; else $datasize=sizeof($lines)-1;
 
-					if ($datasize<=0) exit("Проблемы с базой пользователей (файл данных пуст)<br><br>[<a href='javascript:history.back(1)'>&#9668; назад</a>]");
+					if ($datasize<=0) exit("Проблемы с базой пользователей!<br><br>[<a href='javascript:history.back(1)'>&#9668; назад</a>]");
 
 					$imax=count($lines); $i="1";
 
@@ -226,9 +217,9 @@ if ($flag===TRUE)
 
 					echo'</SELECT></TD></TR><tr><td><b>Тема:</b><input type=text name=tema value="Сообщение" style="width:100%"></td></tr>
 <TR><TD><b>Сообщение</b> <small>(не более '.$maxmsg.' симв)</small><br><TEXTAREA name=msg style="FONT-SIZE: 14px; HEIGHT: 180px; WIDTH: 800px"></TEXTAREA></TD></TR>
-<TR><TD colspan=2><center><INPUT type=submit value="ОТПРАВИТЬ" style="height:25;width:100%" class=button></form></TD></TR></TBODY></TABLE><br></center>';
+<TR><TD colspan=2><center><INPUT type=submit value="ОТПРАВИТЬ" style="height:25;width:100px" class=button></form></TD></TR></TBODY></TABLE><br></center>';
 
-					print "<h3><a href='index.php'>Перейти на главную страницу форума</a></h3></center></td></TR></TABLE>";
+					print "<h3>[<a href='index.php'>вернуться на форум</a>]</h3></center></td></TR></TABLE>";
 
 					echo'';
 				}
@@ -284,8 +275,7 @@ if ($flag===TRUE)
 				flock ($fp,LOCK_UN);
 				fclose($fp);
 			}
-
-			exit ("<script language='Javascript'>function reload() {location = \"pm.php?sendpm&id=$id\"}; setTimeout('reload()', 1000);</script>");
+			exit("<script>function reload(){location=\"pm.php?sendpm&id=$id\"}; setTimeout('reload()',1000);</script>");
 		}
 
 		/////////////// Если нет никакого вывода и ЧТОБЫ самому себе письма не отправлять
@@ -297,13 +287,13 @@ if ($flag===TRUE)
 <tr><td height=40 class=row1><b>Тема:</b> <input type=text name=tema style='width:95%;height:25px' title='Не более $maxtopic симв'></td></tr>
 <tr><td class=row1><b>Сообщение</b> <small>(не более $maxmsg симв)</small><br><textarea name=msg cols=92 rows=11 style='width:100%;height:200px'></textarea></td></tr>
 <tr><td height=35 class=row1><center><input type=submit tabindex=5 style='width:100px;height:25;cursor:pointer' value='Отправить'></center></td></tr>
-</table><br><br><center>[<a href='' onClick='self.close()'>Закрыть окно</a>]</center><br></form>";
+</table><br><br><center>[<a href='' onClick='self.close()'>закрыть окно</a>]</center><br></form>";
 
 		}
 
-	} else echo'Отсутствует обязательный ключ id';
+	} else echo'Отсутствует ключ id';
 
-} else exit("<br><br><br><br><center><font style='font-size:14px;font-family:tahoma'>Идентификатор пользователя неверный!<br><br><br>[<a href='' onClick='self.close()'>Закрыть окно</a>]</font></center>");
+} else exit("<br><br><p align=center>Идентификатор пользователя неверный!<br><br><br>[<a href='' onClick='self.close()'>закрыть</a>] &nbsp; [<a href='index.php'>на форум</a>]</p>");
 
 ?>
 </body>

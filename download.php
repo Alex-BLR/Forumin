@@ -17,14 +17,13 @@ it  under the terms  of  the  GNU  Lesser  General  Public  License  as
 published by the Free Software Foundation; either version 2.1 of the
 License, or (at your option) any later version.
 *******************************************************/
-//error_reporting (E_ALL);
+//error_reporting(E_ALL);
 
 include "config.php";
 
 $data="$filedir/download.dat"; // Файл статистики
 $jscript="application/javascript"; // JavaScript MIME Type Name
 $binary="application/octet-stream"; // Binary file MIME Type
-
 
 ////////////////// Дата, время
 $date=gmdate('d.m.Y',time()+3600*($timezone+(date('I')==1?0:1)));
@@ -40,23 +39,21 @@ function replacer($text) {
 	$text=str_replace("`", '', $text);
 	$text=str_replace("\n", '', $text);
 	$text=str_replace("\r", '', $text);
-	$text=str_replace("\t", '', $text);
+	$text=str_replace("\t", ' ', $text);
 	$text=str_replace("\r\n", '', $text);
 	$text=preg_replace("/\n/", '', $text);
 	$text=preg_replace("/\r/", '', $text);
+	$text=preg_replace("/\s\s\s+/", ' ', $text);
 	//$text=stripslashes($text);
 	return $text;
 }
 
 ////////////////// Определение IP
 function getIpAddress() {
-	$check = array('HTTP_CLIENT_IP', 'HTTP_X_FORWARDED_FOR', 'HTTP_X_FORWARDED', 'HTTP_X_CLUSTER_CLIENT_IP', 'HTTP_FORWARDED_FOR', 'HTTP_FORWARDED', 'REMOTE_ADDR');
+	$check = array('HTTP_CLIENT_IP','HTTP_XROXY_CONNECTION','HTTP_PROXY_CONNECTION','HTTP_X_REAL_IP','HTTP_VIA','REMOTE_ADDR','HTTP_X_COMING_FROM','HTTP_COMING_FROM','HTTP_X_CLUSTER_CLIENT_IP','HTTP_X_FORWARDED_FOR','HTTP_X_FORWARDED','HTTP_FORWARDED_FOR','HTTP_FORWARDED');
 	$rip = '0.0.0.0';
 	foreach ($check as $akey) {
-		if (isset($_SERVER[$akey])) {
-			list($rip) = explode(',', $_SERVER[$akey]);
-			break;
-		}
+		if (isset($_SERVER[$akey])) {list($rip)=explode(',', $_SERVER[$akey]); break;}
 	}
 	return $rip;
 }
@@ -65,8 +62,6 @@ $host = replacer(gethostbyaddr("$realip"));
 
 $hr = replacer($_SERVER['HTTP_REFERER']);
 $hua = replacer($_SERVER['HTTP_USER_AGENT']);
-
-
 
 //////////////////////////////// Downloader
 if (isset($_GET['file']))
@@ -78,7 +73,6 @@ if (isset($_GET['file']))
 		// Leave script if writing is impossible
 		if (!is_file($data) || !is_readable($data) || !is_writeable($data)) {ErrMess("Can't write file <b>$data</b>");}
 
-		// Increase counter
 		$read=fopen($data,"r") or ErrMess("Can't open file $data");
 		$file_change=file("$data");
 		fclose($read);
@@ -132,8 +126,6 @@ if (isset($_GET['filecnt']))
 		echo("document.write('{error reading counter data}');");
 		exit;
 	}
-
-	// Reading data file
 	$read=fopen($data,"r") or die("document.write('{error reading counter data}');");
 	$file_change=file("$data");
 	fclose($read);

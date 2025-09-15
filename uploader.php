@@ -2,7 +2,7 @@
 
 include "config.php";
 
-$dirload = "load/"; // Default directory to upload files
+$dirload = "load/"; //Папка куда загружаются файлы
 $file_ext = array(".gif", ".jpg", ".jpeg", ".png");
 
 $hst=$_SERVER["HTTP_HOST"];
