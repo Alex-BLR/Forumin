@@ -3,17 +3,20 @@
 <tr>
 <td align=left><span class=med title="Уникальные визиты">&nbsp;<?=$cnum?></span> | <span class=med title="Время генерации скрипта (сек)"><?=$total_time?></span> | <span class=med>Зарегистрировано: <a href="index.php?event=who" title="Последний: <?=$tdt[0]?>"><?=$ui?></span></a> | <span class=med title="Активность за <?=$timeouthours?> час">Сегодня были: <?=$st_infoday?> гостей: <b><?=$st_guestsday?></b></span></td>
 <td align=right><!--onchange="window.location=this.value"-->
+
 <form>
 <select size=1 onchange="location.href=this.value">
 <option selected value="">Стиль форума</option>
-<option value="javascript:setActiveStyleSheet('default'); location.reload();">Тёмный простой</option>
-<option value="javascript:setActiveStyleSheet('alternate 1'); location.reload();">Тёмный стим</option>
-<option value="javascript:setActiveStyleSheet('alternate 2'); location.reload();">Тёмный сотовый</option>
-<option value="javascript:setActiveStyleSheet('alternate 3'); location.reload();">Тёмный шашки</option>
-<option value="javascript:setActiveStyleSheet('alternate 4'); location.reload();">Оранжевый полосатый</option>
-<option value="javascript:setActiveStyleSheet('alternate 5'); location.reload();">Серый светлый</option>
-<option value="javascript:setActiveStyleSheet('alternate 6'); location.reload();">Серый полосатый</option>
-<option value="javascript:setActiveStyleSheet('alternate 7'); location.reload();">Зелёный простой</option>
+<option value="javascript:setActiveStyleSheet('default'); location.reload();">Тёмный малый шрифт</option>
+<option value="javascript:setActiveStyleSheet('default big'); location.reload();">Тёмный большой шрифт</option>
+<option value="javascript:setActiveStyleSheet('alternate 1'); location.reload();">Тёмный Evo</option>
+<option value="javascript:setActiveStyleSheet('alternate 2'); location.reload();">Тёмный стим</option>
+<option value="javascript:setActiveStyleSheet('alternate 3'); location.reload();">Тёмный сотовый</option>
+<option value="javascript:setActiveStyleSheet('alternate 4'); location.reload();">Тёмный шашки</option>
+<option value="javascript:setActiveStyleSheet('alternate 5'); location.reload();">Оранжевый полосатый</option>
+<option value="javascript:setActiveStyleSheet('alternate 6'); location.reload();">Серый светлый</option>
+<option value="javascript:setActiveStyleSheet('alternate 7'); location.reload();">Серый полосатый</option>
+<option value="javascript:setActiveStyleSheet('alternate 8'); location.reload();">Зелёный простой</option>
 </select>
 </form>
 </td></tr>
