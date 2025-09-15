@@ -319,3 +319,26 @@ select,option {
 	visibility: visible;
 	opacity: 1;
 }
+
+/* Tooltip Всплывающая подсказка БАНа и Предупр.
+====================================*/
+.cont {
+	position:relative;
+}
+.text-block {
+	position:absolute;top:0px;right:50px;
+}
+.holder {
+	position:relative;
+}
+.holder:hover .block {display:block;}
+
+.block {
+	position:absolute;
+	left:0;
+	right:0;
+	bottom:0;
+	background:rgba(0,0,0,0.5);
+	padding:5px;
+	display:none;
+}
