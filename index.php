@@ -3405,7 +3405,7 @@ else document.getElementById('other').innerHTML='<center><input type=submit clas
 		print"[<a href='index.php?event=login'>Вход</a>]";
 	}
 
- 	print "</div></th><tr class=th><td>!</td><td>Тема</td><td>Ответы / Просм.</td><td>Автор</td><td>Обновление</td></tr></thead><tbody>";
+ 	print "</div></th><tr class=th><td>!</td><td>Тема</td><td>Ответы / Просм.</td><td>Обновление</td></tr></thead><tbody>";
 
 
 
@@ -3489,6 +3489,14 @@ else document.getElementById('other').innerHTML='<center><input type=submit clas
 
 				print"<a href=\"index.php?forumid=".$dn[2]."&page=".$pages."#last\" style='text-decoration:none' title='Страниц: $pages\nПерейти к последней странице'>&#9658;</a><br>";
 
+				if (isset($_COOKIE['cadmin']) && isset($_COOKIE['cpass']) && $_COOKIE['cadmin']==$adminname && $_COOKIE['cpass']==$adminpass)
+				{
+					print"&nbsp; <a href=\"mailto:$dn[1]\" title='Автор темы'>$dn[0]</a> <i class=small>($dn[3])</i>";
+				} else {
+					print"&nbsp; <i title='Автор темы'>$dn[0]</i> <div style='display:inline-block;vertical-align:middle;' class=\"$dn[5]\" title=\"$dn[6], $dn[8]\"></div> <i class=small>($dn[3])</i>";
+				}
+
+
 				if ($pages>1)
 				{
 					print "&nbsp;<span class=med> &nbsp; &nbsp; [стр. ";
@@ -3502,21 +3510,15 @@ else document.getElementById('other').innerHTML='<center><input type=submit clas
 
 				if (is_file("data/$dn[2].user")) print "<font color=red title='Тема для определённых пользователей, либо имеет ограничения на доступ'><svg aria-hidden='true' focusable='false' viewBox='0 0 16 16' height='16' width='16' fill='currentColor' display='inline-block' overflow='visible' style='vertical-align: text-bottom;'><path d='M7.467.133a1.748 1.748 0 0 1 1.066 0l5.25 1.68A1.75 1.75 0 0 1 15 3.48V7c0 1.566-.32 3.182-1.303 4.682-.983 1.498-2.585 2.813-5.032 3.855a1.697 1.697 0 0 1-1.33 0c-2.447-1.042-4.049-2.357-5.032-3.855C1.32 10.182 1 8.566 1 7V3.48a1.75 1.75 0 0 1 1.217-1.667Zm.61 1.429a.25.25 0 0 0-.153 0l-5.25 1.68a.25.25 0 0 0-.174.238V7c0 1.358.275 2.666 1.057 3.86.784 1.194 2.121 2.34 4.366 3.297a.196.196 0 0 0 .154 0c2.245-.956 3.582-2.104 4.366-3.298C13.225 9.666 13.5 8.36 13.5 7V3.48a.251.251 0 0 0-.174-.237l-5.25-1.68ZM8.75 4.75v3a.75.75 0 0 1-1.5 0v-3a.75.75 0 0 1 1.5 0ZM9 10.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z'></path></svg></font>";
 
-				print "</td></tr></table></td><td align=center width='150px'><svg aria-hidden='true' focusable='false' viewBox='0 0 16 16' width='16' height='16' fill='currentColor' display='inline-block' overflow='visible' style='vertical-align: text-bottom;'><path d='M1 2.75C1 1.784 1.784 1 2.75 1h10.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 13.25 12H9.06l-2.573 2.573A1.458 1.458 0 0 1 4 13.543V12H2.75A1.75 1.75 0 0 1 1 10.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h4.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z'></path></svg> $cnt &nbsp;&nbsp;<svg aria-hidden='true' focusable='false' viewBox='0 0 16 16' width='16' height='16' fill='currentColor' display='inline-block' overflow='visible' style='vertical-align: text-bottom;'><path d='M8 2c1.981 0 3.671.992 4.933 2.078 1.27 1.091 2.187 2.345 2.637 3.023a1.62 1.62 0 0 1 0 1.798c-.45.678-1.367 1.932-2.637 3.023C11.67 13.008 9.981 14 8 14c-1.981 0-3.671-.992-4.933-2.078C1.797 10.83.88 9.576.43 8.898a1.62 1.62 0 0 1 0-1.798c.45-.677 1.367-1.931 2.637-3.022C4.33 2.992 6.019 2 8 2ZM1.679 7.932a.12.12 0 0 0 0 .136c.411.622 1.241 1.75 2.366 2.717C5.176 11.758 6.527 12.5 8 12.5c1.473 0 2.825-.742 3.955-1.715 1.124-.967 1.954-2.096 2.366-2.717a.12.12 0 0 0 0-.136c-.412-.621-1.242-1.75-2.366-2.717C10.824 4.242 9.473 3.5 8 3.5c-1.473 0-2.825.742-3.955 1.715-1.124.967-1.954 2.096-2.366 2.717ZM8 10a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 10Z'></path></svg>&nbsp;";
+				print "</td></tr></table></td><td align=center width='150px'>
+<div align=left>&nbsp; &nbsp;<svg aria-hidden='true' focusable='false' viewBox='0 0 16 16' width='16' height='16' fill='currentColor' display='inline-block' overflow='visible' style='vertical-align: text-bottom;'><path d='M1 2.75C1 1.784 1.784 1 2.75 1h10.5c.966 0 1.75.784 1.75 1.75v7.5A1.75 1.75 0 0 1 13.25 12H9.06l-2.573 2.573A1.458 1.458 0 0 1 4 13.543V12H2.75A1.75 1.75 0 0 1 1 10.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h4.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z'></path></svg> $cnt</div>
+
+<div align=right><svg aria-hidden='true' focusable='false' viewBox='0 0 16 16' width='16' height='16' fill='currentColor' display='inline-block' overflow='visible' style='vertical-align: text-bottom;'><path d='M8 2c1.981 0 3.671.992 4.933 2.078 1.27 1.091 2.187 2.345 2.637 3.023a1.62 1.62 0 0 1 0 1.798c-.45.678-1.367 1.932-2.637 3.023C11.67 13.008 9.981 14 8 14c-1.981 0-3.671-.992-4.933-2.078C1.797 10.83.88 9.576.43 8.898a1.62 1.62 0 0 1 0-1.798c.45-.677 1.367-1.931 2.637-3.022C4.33 2.992 6.019 2 8 2ZM1.679 7.932a.12.12 0 0 0 0 .136c.411.622 1.241 1.75 2.366 2.717C5.176 11.758 6.527 12.5 8 12.5c1.473 0 2.825-.742 3.955-1.715 1.124-.967 1.954-2.096 2.366-2.717a.12.12 0 0 0 0-.136c-.412-.621-1.242-1.75-2.366-2.717C10.824 4.242 9.473 3.5 8 3.5c-1.473 0-2.825.742-3.955 1.715-1.124.967-1.954 2.096-2.366 2.717ZM8 10a2 2 0 1 1-.001-3.999A2 2 0 0 1 8 10Z'></path></svg>&nbsp;";
 
 				include "data/$dn[2].dat";
 
-				print "</td><td align=right width='150px'>";
+				print "&nbsp; &nbsp;</div></td><td align=right width='150px'>";
 
-				if (isset($_COOKIE['cadmin']) && isset($_COOKIE['cpass']) && $_COOKIE['cadmin']==$adminname && $_COOKIE['cpass']==$adminpass)
-				{
-					print "<a href=\"mailto:$dn[1]\">$dn[0]</a>&nbsp;";
-				} else {
-					print "<b>$dn[0]</b>&nbsp;";
-					print "<div style='display:inline-block;vertical-align:middle;' class=\"$dn[5]\" title=\"$dn[6], $dn[8]\"></div>";
-				}
-
-				print"<br><span class=small>$dn[3]</span>&nbsp;</td><td align=right width='150px'>";
 
 				if (empty($dn[15]))
 				{
@@ -3524,24 +3526,50 @@ else document.getElementById('other').innerHTML='<center><input type=submit clas
 				} else {
 					$dn[18]=trim(replacer($dn[18]));
 					$dn[18]=str_replace("&lt;br&gt;", "\r\n", $dn[18]);
-					$dn[18]=str_replace(array("[code]","[quote]","[b]","[i]","[u]","[s]","[big]","[small]","[red]","[blue]","[green]","[orange]","[yellow]"), array("[код-]","[цитата-]","","","","","","","","","","",""), $dn[18]);
-					$dn[18]=str_replace(array("[/code]","[/quote]","[/b]","[/i]","[/u]","[/s]","[/big]","[/small]","[/red]","[/blue]","[/green]","[/orange]","[/yellow]"), array("[-код]","[-цитата]","","","","","","","","","","",""), $dn[18]);
+					$dn[18]=str_replace(array(
+								"[code]", "[/code]",
+								"[quote]", "[/quote]",
+								"[video]", "[/video]",
+								"[audio]", "[/audio]",
+								"[vimeo]", "[/vimeo]",
+								"[dzen]", "[/dzen]",
+								"[rutube]", "[/rutube]",
+								"[youtube]", "[/youtube]",
+								"[ok]", "[/ok]",
+								"[telegram]", "[/telegram]",
+								"[left]", "[/left]",
+								"[center]", "[/center]",
+								"[right]", "[/right]",
+								"[img]", "[/img]",
+								"[b]", "[/b]",
+								"[i]", "[/i]",
+								"[u]", "[/u]",
+								"[s]", "[/s]",
+								"[big]", "[/big]",
+								"[small]", "[/small]",
+								"[red]", "[/red]",
+								"[blue]", "[/blue]",
+								"[green]", "[/green]",
+								"[orange]", "[/orange]",
+								"[yellow]", "[/yellow]"),
+							array(
+								"[код-]", "[-код]",
+								"[цитата-]", "[-цитата]",
+								"","","","","","","","","","", "","","","","","","","","","", "","","","","","","","","","", "","","","","","","","","","", "","","","","",""), $dn[18]);
+
 					$dn[18]=preg_replace("/\[hide\](.+?)\[\/hide\]/is", " [Текст скрыт от гостей] ", $dn[18]);
 					$dn[18]=preg_replace("/\[hide=(.+?)\](.+?)\[\/hide\]/is", " [Текст для \\1] ", $dn[18]);
 
 					print "<span style='display:none;'>$ftime</span>";
-					print "<a href=\"index.php?forumid=".$dn[2]."&page=".$pages."#last\" title=\"$dn[18]\">$dn[15]</a>&nbsp;";
-					print "<div style='display: inline-block; vertical-align: middle;' class=\"$dn[19]\" title=\"$dn[20], $dn[22]\"></div>";
+					print "<a href=\"index.php?forumid=".$dn[2]."&page=".$pages."#last\" title=\"Перейти к сообщению:\n\n$dn[18]\">$dn[15]</a>&nbsp;";
+					print "<div style='display:inline-block;vertical-align:middle;' class=\"$dn[19]\" title=\"$dn[20], $dn[22]\"></div>";
 				}
 				print "<br>";
-				if (empty($dn[15])) print "---&nbsp;"; else print "<span class=small>$dn[17]</span>&nbsp;";
+				if (empty($dn[15])) print "---&nbsp;"; else print "<i class=med>$dn[17]</i>&nbsp;";
 				print "</td></tr>";
 			}
 		}
 	}
-
-
-
 
 	print "</tbody></table>";
 }
