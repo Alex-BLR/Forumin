@@ -1,6 +1,7 @@
 # Forumin
 
 === ENG ===
+
 Website forum
 
 System requirements: PHP 5.3
@@ -11,7 +12,9 @@ Forum example: http://vox.dx.am/forumin
 
 For the description and quick start guide, see the Readme.txt file.
 
+
 === RUS ===
+
 Форум для сайта
 
 Системные требования: PHP 5.3
